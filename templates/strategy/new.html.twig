@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Strategy{% endblock %}
+
+{% block body %}
+    <h1>Create new Strategy</h1>
+
+    {{ include('strategy/_form.html.twig') }}
+
+    <a href="{{ path('app_strategy_index') }}">back to list</a>
+{% endblock %}
