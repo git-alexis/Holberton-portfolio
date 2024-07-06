@@ -19,14 +19,21 @@ class Skill
     private ?string $name = null;
 
     /**
-     * @var Collection<int, Strategy>
+     * @var Collection<int, SkillStrategy>
      */
-    #[ORM\ManyToMany(targetEntity: Strategy::class, mappedBy: 'skills')]
-    private Collection $strategies;
+    #[ORM\OneToMany(targetEntity: SkillStrategy::class, mappedBy: 'skill_id')]
+    private Collection $skillStrategies;
+
+    /**
+     * @var Collection<int, TankSkill>
+     */
+    #[ORM\OneToMany(targetEntity: TankSkill::class, mappedBy: 'skill_id')]
+    private Collection $tankSkills;
 
     public function __construct()
     {
-        $this->strategies = new ArrayCollection();
+        $this->skillStrategies = new ArrayCollection();
+        $this->tankSkills = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -47,27 +54,60 @@ class Skill
     }
 
     /**
-     * @return Collection<int, Strategy>
+     * @return Collection<int, SkillStrategy>
      */
-    public function getStrategies(): Collection
+    public function getSkillStrategies(): Collection
     {
-        return $this->strategies;
+        return $this->skillStrategies;
     }
 
-    public function addStrategy(Strategy $strategy): static
+    public function addSkillStrategy(SkillStrategy $skillStrategy): static
     {
-        if (!$this->strategies->contains($strategy)) {
-            $this->strategies->add($strategy);
-            $strategy->addSkill($this);
+        if (!$this->skillStrategies->contains($skillStrategy)) {
+            $this->skillStrategies->add($skillStrategy);
+            $skillStrategy->setSkillId($this);
         }
 
         return $this;
     }
 
-    public function removeStrategy(Strategy $strategy): static
+    public function removeSkillStrategy(SkillStrategy $skillStrategy): static
     {
-        if ($this->strategies->removeElement($strategy)) {
-            $strategy->removeSkill($this);
+        if ($this->skillStrategies->removeElement($skillStrategy)) {
+            // set the owning side to null (unless already changed)
+            if ($skillStrategy->getSkillId() === $this) {
+                $skillStrategy->setSkillId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, TankSkill>
+     */
+    public function getTankSkills(): Collection
+    {
+        return $this->tankSkills;
+    }
+
+    public function addTankSkill(TankSkill $tankSkill): static
+    {
+        if (!$this->tankSkills->contains($tankSkill)) {
+            $this->tankSkills->add($tankSkill);
+            $tankSkill->setSkillId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTankSkill(TankSkill $tankSkill): static
+    {
+        if ($this->tankSkills->removeElement($tankSkill)) {
+            // set the owning side to null (unless already changed)
+            if ($tankSkill->getSkillId() === $this) {
+                $tankSkill->setSkillId(null);
+            }
         }
 
         return $this;
