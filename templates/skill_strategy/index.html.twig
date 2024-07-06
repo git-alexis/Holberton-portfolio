@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SkillStrategy index{% endblock %}
+
+{% block body %}
+    <h1>SkillStrategy index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for skill_strategy in skill_strategies %}
+            <tr>
+                <td>{{ skill_strategy.id }}</td>
+                <td>
+                    <a href="{{ path('app_skill_strategy_show', {'id': skill_strategy.id}) }}">show</a>
+                    <a href="{{ path('app_skill_strategy_edit', {'id': skill_strategy.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_skill_strategy_new') }}">Create new</a>
+{% endblock %}
