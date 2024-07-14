@@ -3,6 +3,9 @@
 {% block title %}New Tank{% endblock %}
 
 {% block body %}
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
     <h1>Create new Tank</h1>
 
     {{ include('tank/_form.html.twig') }}

@@ -3,33 +3,38 @@
 {% block title %}Tank index{% endblock %}
 
 {% block body %}
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
     <h1>Tank index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tank in tanks %}
-            <tr>
-                <td>{{ tank.id }}</td>
-                <td>{{ tank.name }}</td>
-                <td>
-                    <a href="{{ path('app_tank_show', {'id': tank.id}) }}">show</a>
-                    <a href="{{ path('app_tank_edit', {'id': tank.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for tank in tanks %}
+                <tr>
+                    <td>{{ tank.id }}</td>
+                    <td>{{ tank.name }}</td>
+                    <td>
+                        <a href="{{ path('app_tank_show', {'id': tank.id}) }}" class="btn btn-show">Show</a>
+                        <a href="{{ path('app_tank_edit', {'id': tank.id}) }}" class="btn btn-edit">Edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-    <a href="{{ path('app_tank_new') }}">Create new</a>
+    <a href="{{ path('app_tank_new') }}" class="btn btn-new">Create New</a>
 {% endblock %}

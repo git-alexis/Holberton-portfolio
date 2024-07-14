@@ -3,6 +3,9 @@
 {% block title %}Strategy index{% endblock %}
 
 {% block body %}
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
     <h1>Strategy index</h1>
 
     <table class="table">

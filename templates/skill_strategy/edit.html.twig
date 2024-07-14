@@ -3,11 +3,16 @@
 {% block title %}Edit SkillStrategy{% endblock %}
 
 {% block body %}
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
     <h1>Edit SkillStrategy</h1>
 
     {{ include('skill_strategy/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_skill_strategy_index') }}">back to list</a>
 
-    {{ include('skill_strategy/_delete_form.html.twig') }}
+	{% if is_granted('ROLE_ADMIN') %}
+    	{{ include('skill_strategy/_delete_form.html.twig') }}
+	{% endif %}
 {% endblock %}

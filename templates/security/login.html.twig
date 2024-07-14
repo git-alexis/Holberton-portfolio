@@ -3,9 +3,17 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-    <form method="post">
+    <form name="login_form" class="login-container" method="post">
         {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+                
+                {% if isEmailAndPasswordIncorrect %}
+                    <div>
+                        <a class="btn btn-danger" href="{{ path('app_register', { 'from_login': true }) }}">Create this account</a>
+                    </div>
+                {% endif %}
+            </div>
         {% endif %}
 
         {% if app.user %}
@@ -14,11 +22,16 @@
             </div>
         {% endif %}
 
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="username">Email</label>
+        <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
+        <p><span>*</span> : mandatory field</p>
+        <p class="parag-login">
+        <label for="username">* Email</label>
         <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
-        <label for="password">Password</label>
+        </p>
+        <p class="parag-login">
+        <label for="password">* Password</label>
         <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+        </p>
 
         <input type="hidden" name="_csrf_token"
                value="{{ csrf_token('authenticate') }}"
@@ -35,7 +48,7 @@
         #}
 
         <button class="btn btn-lg btn-primary" type="submit">
-            Sign in
+            Log in
         </button>
     </form>
 {% endblock %}

@@ -3,6 +3,9 @@
 {% block title %}Strategy{% endblock %}
 
 {% block body %}
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
     <h1>Strategy</h1>
 
     <table class="table">

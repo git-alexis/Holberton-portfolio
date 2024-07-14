@@ -9,6 +9,7 @@
 
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
+			<script src="{{ asset('app.js') }}"></script>
         {% endblock %}
     </head>
     <body>
@@ -20,11 +21,16 @@
                 </div>
                 <div class="nav-section">
                     <a href={{ path('home') }}>page home</a> |
-                    <a href={{ path('app_tank_index') }}>page tank</a> |
-                    <a href={{ path('app_skill_index') }}>page skill</a> |
-                    <a href={{ path('app_strategy_index') }}>page strategy</a> |
-                    <a href={{ path('app_tank_skill_index') }}>page tank-skill</a> |
-                    <a href={{ path('app_skill_strategy_index') }}>page skill-strategy</a>
+                    <a href={{ path('app_register') }}>page register</a> |
+                    <a href={{ path('app_login') }}>page login</a>
+					{% if user is not null %}
+						|
+                    	<a href={{ path('app_tank_index') }}>page tank</a> |
+                    	<a href={{ path('app_skill_index') }}>page skill</a> |
+                    	<a href={{ path('app_strategy_index') }}>page strategy</a> |
+                    	<a href={{ path('app_tank_skill_index') }}>page tank-skill</a> |
+                    	<a href={{ path('app_skill_strategy_index') }}>page skill-strategy</a>
+					{% endif %}
                 </div>
             </div>
         </header>

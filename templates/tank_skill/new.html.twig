@@ -3,6 +3,9 @@
 {% block title %}New TankSkill{% endblock %}
 
 {% block body %}
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
     <h1>Create new TankSkill</h1>
 
     {{ include('tank_skill/_form.html.twig') }}

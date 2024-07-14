@@ -3,6 +3,9 @@
 {% block title %}New Strategy{% endblock %}
 
 {% block body %}
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
     <h1>Create new Strategy</h1>
 
     {{ include('strategy/_form.html.twig') }}
