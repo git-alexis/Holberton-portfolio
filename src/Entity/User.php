@@ -31,6 +31,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    /**
+     * @var string The user name
+     */
+    #[ORM\Column]
+    private ?string $name = null;
+
+    /**
+     * @var string The user surname
+     */
+    #[ORM\Column]
+    private ?string $surname = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -93,6 +105,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): static
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getSurname(): string
+    {
+        return $this->surname;
+    }
+
+    public function setSurname(string $surname): static
+    {
+        $this->surname = $surname;
 
         return $this;
     }
