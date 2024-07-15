@@ -7,10 +7,10 @@
         {% block stylesheets %}
         {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+    	{% block javascripts %}
+        	{% block importmap %}{{ importmap('app') }}{% endblock %}
 			<script src="{{ asset('app.js') }}"></script>
-        {% endblock %}
+    	{% endblock %}
     </head>
     <body>
         <header>
@@ -37,8 +37,14 @@
 
         <main>
             <article>
-                {% block body %}{% endblock %}
+			    <div class="article-size">
+                	{% block body %}{% endblock %}
+				</div>
             </article>
         </main>
+
+        <footer>
+			<p>Made by Alexis BILLEMONT</p>
+		</footer>
     </body>
 </html>

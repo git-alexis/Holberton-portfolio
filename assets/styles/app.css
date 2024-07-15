@@ -5,6 +5,7 @@ body {
     text-align: center;
     width: 75%;
     margin: 0 auto;
+	height: 100%;
 }
 
 .baniere-content {
@@ -48,9 +49,10 @@ main {
 
 article {
     flex: auto;
-    background-color: rgb(255, 255, 255);
     align-content: center;
     padding: 25px;
+	backdrop-filter: blur(5px);
+	background-color: rgba(53, 62, 13, 0.5);
 }
 
 .table-container {
@@ -114,6 +116,10 @@ article > p {
     text-indent: 36px;
 }
 
+p, h1, td, label{
+	color: white
+}
+
 form[name='register_form'], form[name='login_form'] {
     margin-left: 40%;
     display: inline-block;
@@ -141,7 +147,7 @@ form[name='register_form'], form[name='login_form'] {
 }
 
 .utilisateur {
-    padding-left: 90%;
+    padding-right: 90%;
 	font-style: italic;
 }
 
@@ -152,4 +158,13 @@ form[name='register_form'], form[name='login_form'] {
 
 .img-zoomed {
     transform: scale(2); /* Double la taille de l'image */
+}
+
+footer {
+	background-color: rgb(214, 204, 204);
+	padding: 5px;
+}
+
+footer > p {
+	color: black;
 }

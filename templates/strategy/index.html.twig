@@ -4,35 +4,40 @@
 
 {% block body %}
     {% if user is not null %}
-        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+        {% set current_user = user.name ~ '.' ~ user.surname %}
+        <p class="utilisateur">{{ current_user }}</p>
     {% endif %}
     <h1>Strategy index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for strategy in strategies %}
-            <tr>
-                <td>{{ strategy.id }}</td>
-                <td>{{ strategy.name }}</td>
-                <td>
-                    <a href="{{ path('app_strategy_show', {'id': strategy.id}) }}">show</a>
-                    <a href="{{ path('app_strategy_edit', {'id': strategy.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-container">
+    	<table class="table">
+        	<thead>
+            	<tr>
+                	<th>Id</th>
+                	<th>Name</th>
+                	<th>Actions</th>
+            	</tr>
+        	</thead>
+        	<tbody>
+        	{% for strategy in strategies %}
+            	<tr>
+                	<td>{{ strategy.id }}</td>
+                	<td>{{ strategy.name }}</td>
+                	<td>
+                    	<a href="{{ path('app_strategy_show', {'id': strategy.id}) }}" class="btn btn-show">Show</a>
+                    	{% if current_user == strategy.getCreatedBy() or is_granted('ROLE_ADMIN') %}
+							<a href="{{ path('app_strategy_edit', {'id': strategy.id}) }}" class="btn btn-edit">Edit</a>
+						{% endif %}
+					</td>
+            	</tr>
+        	{% else %}
+            	<tr>
+                	<td colspan="3">no records found</td>
+            	</tr>
+        	{% endfor %}
+        	</tbody>
+    	</table>
+	</div>
 
-    <a href="{{ path('app_strategy_new') }}">Create new</a>
+    <a href="{{ path('app_strategy_new') }}" class="btn btn-new">Create New</a>
 {% endblock %}

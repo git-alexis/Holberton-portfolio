@@ -4,33 +4,38 @@
 
 {% block body %}
     {% if user is not null %}
-        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+        {% set current_user = user.name ~ '.' ~ user.surname %}
+        <p class="utilisateur">{{ current_user }}</p>
     {% endif %}
     <h1>SkillStrategy index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for skill_strategy in skill_strategies %}
-            <tr>
-                <td>{{ skill_strategy.id }}</td>
-                <td>
-                    <a href="{{ path('app_skill_strategy_show', {'id': skill_strategy.id}) }}">show</a>
-                    <a href="{{ path('app_skill_strategy_edit', {'id': skill_strategy.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="2">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-container">
+    	<table class="table">
+        	<thead>
+            	<tr>
+                	<th>Id</th>
+                	<th>Actions</th>
+            	</tr>
+        	</thead>
+        	<tbody>
+        	{% for skill_strategy in skill_strategies %}
+            	<tr>
+                	<td>{{ skill_strategy.id }}</td>
+                	<td>
+                    	<a href="{{ path('app_skill_strategy_show', {'id': skill_strategy.id}) }}" class="btn btn-show">Show</a>
+                    	{% if current_user == skill_strategy.getCreatedBy() or is_granted('ROLE_ADMIN') %}
+							<a href="{{ path('app_skill_strategy_edit', {'id': skill_strategy.id}) }}" class="btn btn-edit">Edit</a>
+						{% endif %}
+					</td>
+            	</tr>
+        	{% else %}
+            	<tr>
+                	<td colspan="2">no records found</td>
+            	</tr>
+        	{% endfor %}
+        	</tbody>
+    	</table>
+	</div>
 
-    <a href="{{ path('app_skill_strategy_new') }}">Create new</a>
+    <a href="{{ path('app_skill_strategy_new') }}" class="btn btn-new">Create New</a>
 {% endblock %}
