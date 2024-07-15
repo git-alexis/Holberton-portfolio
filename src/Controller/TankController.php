@@ -34,6 +34,9 @@ class TankController extends AbstractController
 		$user = $security->getUser();
 
         $tank = new Tank();
+
+		$tank->setCreatedBy($user);
+
         $form = $this->createForm(TankType::class, $tank);
         $form->handleRequest($request);
 

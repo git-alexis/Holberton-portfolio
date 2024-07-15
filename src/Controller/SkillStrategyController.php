@@ -34,6 +34,9 @@ class SkillStrategyController extends AbstractController
 		$user = $security->getUser();
 
         $skillStrategy = new SkillStrategy();
+
+		$skillStrategy->setCreatedBy($user);
+
         $form = $this->createForm(SkillStrategyType::class, $skillStrategy);
         $form->handleRequest($request);
 

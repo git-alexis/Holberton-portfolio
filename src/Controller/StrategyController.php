@@ -34,6 +34,9 @@ class StrategyController extends AbstractController
 		$user = $security->getUser();
 
         $strategy = new Strategy();
+
+		$strategy->setCreatedBy($user);
+
         $form = $this->createForm(StrategyType::class, $strategy);
         $form->handleRequest($request);
 

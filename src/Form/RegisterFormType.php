@@ -31,7 +31,7 @@ class RegisterFormType extends AbstractType
             ->add('roles', ChoiceType::class, [
                 'label' => '* Roles :',
                 'choices' => [
-                    'Utilisateur' => 'ROLE_USER',
+                    'User' => 'ROLE_USER',
                 ],
                 'multiple' => true,
                 'expanded' => true,

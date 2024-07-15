@@ -34,6 +34,9 @@ class SkillController extends AbstractController
 		$user = $security->getUser();
 
         $skill = new Skill();
+
+		$skill->setCreatedBy($user);
+
         $form = $this->createForm(SkillType::class, $skill);
         $form->handleRequest($request);
 
