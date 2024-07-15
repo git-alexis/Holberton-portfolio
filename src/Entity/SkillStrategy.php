@@ -19,6 +19,9 @@ class SkillStrategy
     #[ORM\ManyToOne(inversedBy: 'skillStrategies')]
     private ?Strategy $strategy_id = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $created_by = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,4 +50,16 @@ class SkillStrategy
 
         return $this;
     }
+
+    public function getCreatedBy(): ?string
+	{
+		return $this->created_by;
+	}
+
+	public function setCreatedBy(User $user): self
+	{
+    	$this->created_by = $user->getName() . '.' . $user->getSurname();
+
+    	return $this;
+	}
 }

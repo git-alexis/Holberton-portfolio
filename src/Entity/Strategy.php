@@ -24,6 +24,9 @@ class Strategy
     #[ORM\OneToMany(targetEntity: SkillStrategy::class, mappedBy: 'strategy_id')]
     private Collection $skillStrategies;
 
+    #[ORM\Column(length: 255)]
+    private ?string $created_by = null;
+
     public function __construct()
     {
         $this->skillStrategies = new ArrayCollection();
@@ -75,4 +78,16 @@ class Strategy
 
         return $this;
     }
+
+    public function getCreatedBy(): ?string
+	{
+		return $this->created_by;
+	}
+
+	public function setCreatedBy(User $user): self
+	{
+    	$this->created_by = $user->getName() . '.' . $user->getSurname();
+
+    	return $this;
+	}
 }
