@@ -3,6 +3,7 @@
 {% block title %}New TankSkill{% endblock %}
 
 {% block body %}
+<div class="content">
     {% if user is not null %}
         <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
     {% endif %}
@@ -11,4 +12,5 @@
     {{ include('tank_skill/_form.html.twig') }}
 
     <a href="{{ path('app_tank_skill_index') }}" class="btn">Back to list</a>
+</div>
 {% endblock %}

@@ -3,6 +3,7 @@
 {% block title %}SkillStrategy{% endblock %}
 
 {% block body %}
+<div class="content">
     {% if user is not null %}
         <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
     {% endif %}
@@ -29,4 +30,5 @@
     {{ include('skill_strategy/_delete_form.html.twig') }}
 
     <a href="{{ path('app_skill_strategy_index') }}" class="btn">back to list</a>
+</div>
 {% endblock %}

@@ -3,6 +3,7 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+<div class="content">
     <form name="login_form" class="login-container" method="post">
         {% if error %}
             <div class="alert alert-danger">
@@ -51,4 +52,5 @@
             Log in
         </button>
     </form>
+</div>
 {% endblock %}

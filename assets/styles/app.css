@@ -1,11 +1,13 @@
 body {
-    flex-direction: column;
+    display: flex;
+	flex-direction: column;
     background-image: url("https://www.envogue-mainz.de/out/pictures/master/product/1/army-stoff-camouflage-l748-4-natur-oliv-braun-schwarz.jpg");
     background-size: 100%;
     text-align: center;
     width: 75%;
     margin: 0 auto;
 	height: 100%;
+	min-height: 100vh;
 }
 
 .baniere-content {
@@ -178,6 +180,7 @@ input {
     padding-right: 90%;
 	font-style: italic;
 	font-size: 20px;
+
 }
 
 .img-normal {
@@ -192,9 +195,14 @@ input {
 footer {
 	background-color: rgb(214, 204, 204);
 	padding: 1px;
+	margin-top: auto;
 }
 
 footer > p {
 	color: black;
 	font-size: 18px;
+}
+
+.content {
+	margin-top: -60%;
 }

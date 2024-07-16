@@ -3,6 +3,7 @@
 {% block title %}SkillStrategy index{% endblock %}
 
 {% block body %}
+<div class="content">
     {% if user is not null %}
         {% set current_user = user.name ~ '.' ~ user.surname %}
         <p class="utilisateur">{{ current_user }}</p>
@@ -38,4 +39,5 @@
 	</div>
 
     <a href="{{ path('app_skill_strategy_new') }}" class="btn btn-new">Create New</a>
+</div>
 {% endblock %}

@@ -3,6 +3,7 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+<div class="content">
 {% if user is not null %}
     <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
 {% endif %}
@@ -24,5 +25,6 @@
         </br>
         {{ form_row(registerForm.register) }}
     {{ form_end(registerForm) }}
+</div>
 </div>
 {% endblock %}
