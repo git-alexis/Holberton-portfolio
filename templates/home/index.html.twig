@@ -3,6 +3,9 @@
 {% block title %}Hello HomeControlerController!{% endblock %}
 
 {% block body %}
+	{% if user is not null %}
+    	<p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+	{% endif %}
 	<h1 class="center">Emergency conception</h1>
 
     <p>As early as 1935, the German high command began contemplating the design of a heavy armored vehicle as part of studies that would have to address an impressive array of technical challenges.
