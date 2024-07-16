@@ -3,7 +3,6 @@
 {% block title %}TankSkill{% endblock %}
 
 {% block body %}
-<div class="content">
     {% if user is not null %}
         <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
     {% endif %}
@@ -34,5 +33,4 @@
 	{% endif %}
 
     <a href="{{ path('app_tank_skill_index') }}" class="btn">back to list</a>
-</div>
 {% endblock %}

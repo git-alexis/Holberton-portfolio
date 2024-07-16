@@ -52,7 +52,6 @@ main {
 
 article {
     flex: auto;
-    align-content: center;
     padding: 25px;
 	backdrop-filter: blur(5px);
 	background-color: rgba(22, 28, 6, 0.5);
@@ -201,8 +200,4 @@ footer {
 footer > p {
 	color: black;
 	font-size: 18px;
-}
-
-.content {
-	margin-top: -60%;
 }

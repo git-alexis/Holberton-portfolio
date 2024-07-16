@@ -3,7 +3,6 @@
 {% block title %}New Strategy{% endblock %}
 
 {% block body %}
-<div class="content">
     {% if user is not null %}
         <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
     {% endif %}
@@ -12,5 +11,4 @@
     {{ include('strategy/_form.html.twig') }}
 
     <a href="{{ path('app_strategy_index') }}" class="btn">back to list</a>
-</div>
 {% endblock %}
