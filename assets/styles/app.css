@@ -38,6 +38,7 @@ body {
 
 .nav-section a {
     color: rgb(0, 0, 0);
+	font-size: 18px;
 }
 
 main {
@@ -52,7 +53,7 @@ article {
     align-content: center;
     padding: 25px;
 	backdrop-filter: blur(5px);
-	background-color: rgba(53, 62, 13, 0.5);
+	background-color: rgba(22, 28, 6, 0.5);
 }
 
 .table-container {
@@ -71,6 +72,7 @@ article {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+	font-size: 18px;
 }
 
 .table th {
@@ -89,6 +91,7 @@ article {
     text-decoration: none;
     border-radius: 4px;
     margin-right: 5px;
+	font-size: 18px;
 }
 
 .btn-show {
@@ -97,6 +100,14 @@ article {
 
 .btn-edit {
     background-color: #ffc107;
+}
+
+.btn-update {
+    background-color: #ffc107;
+}
+
+.btn-delete {
+    background-color: #ac0909;
 }
 
 .btn-new {
@@ -108,12 +119,17 @@ article {
 }
 
 h1 {
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+article > h1 {
+	font-size: 30px;
 }
 
 article > p {
     text-align: justify;
     text-indent: 36px;
+    font-size: 18px;
 }
 
 p, h1, td, label{
@@ -122,7 +138,6 @@ p, h1, td, label{
 
 form[name='register_form'], form[name='login_form'] {
     margin-left: 40%;
-    display: inline-block;
     float: left;
     width: 200px;
     text-align: left;
@@ -142,13 +157,27 @@ form[name='register_form'], form[name='login_form'] {
     margin: auto;
 }
 
+.form-container, .login-container {
+	font-size: 18px;
+	color: white;
+}
+
 .login-container span {
     color: red;
+}
+
+label {
+	font-size: 18px;
+}
+
+input {
+	font-size: 18px;
 }
 
 .utilisateur {
     padding-right: 90%;
 	font-style: italic;
+	font-size: 20px;
 }
 
 .img-normal {
@@ -157,14 +186,15 @@ form[name='register_form'], form[name='login_form'] {
 }
 
 .img-zoomed {
-    transform: scale(2); /* Double la taille de l'image */
+    transform: scale(2.5); /* Double la taille de l'image */
 }
 
 footer {
 	background-color: rgb(214, 204, 204);
-	padding: 5px;
+	padding: 1px;
 }
 
 footer > p {
 	color: black;
+	font-size: 18px;
 }

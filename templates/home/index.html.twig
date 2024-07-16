@@ -3,38 +3,38 @@
 {% block title %}Hello HomeControlerController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<h1 class="center">Emergency conception</h1>
 
-<div class="example-wrapper">
-    {% if user is not null %}
-        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
-    {% endif %}
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <p>As early as 1935, the German high command began contemplating the design of a heavy armored vehicle as part of studies that would have to address an impressive array of technical challenges.
+    The primary challenge of such a project was its propulsion, as there was no engine powerful enough at that time to move such a heavy machine - required power 600 to 700 hp / available maximum power 300 hp.
+    Moreover, the project compelled engineers to rethink the turret, chassis, suspensions, transmission, and gearbox from scratch. Maybach was tasked with designing the engine block, Krupp with the turret, Rheinmetall-Borsig with the cannon, and Henschel with the chassis. Contracts with all these companies were signed between November 1936 and January 1937.
+    In September 1939, Porsche joined the project. On his own initiative, he started contemplating a competing heavy tank project. By January 1941, the project picked up pace. Manufacturers were asked to prepare large-scale production by no later than January 1942.
+    However, the studies were far from complete, and numerous technical challenges had to be overcome (engine power, incomplete chassis and turret, etc.). But urgency arose due to the preparations for the invasion of the Soviet Union. These heavy tanks needed to be able to combat the Red Army's heavy tanks like the famous KV-1.
+    During the meeting on May 26, 1941, Hitler demanded the design of an even heavier and more powerful tank (45 tons, anti-tank gun of 75 or 88 mm penetrating 100 mm at 1500 m, armor of 100 mm front and 80 mm on the sides, maximum speed of 40 km/h with a range of 150 km).
+    Previous projects were canceled, and both Porsche and Henschel began working on the design of a new vehicle, officially becoming the Tigerprogramm. It was also during the May 26 meeting that the role of this heavy tank was defined. It was meant to have supremacy over enemy armored forces at long distances, specifically in the Russian steppes that offered vast fields of fire.
+    Real testing to distinguish between the two designs began in June 1942. The VK 45.01 Tiger Porsche prototype failed all the tests and was consequently not approved by Hitler. The VK 45.01 Henschel prototype acquired its definitive name of Tiger in March 1942.
+    In August 1942, Henschel began mass production of its heavy tank.</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/src/Controller/HomeControlerController.php</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        
-        <li>Your controller at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/src/Controller/HomeControlerController.php</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        
-        <li>Your controller at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/src/Controller/HomeControlerController.php</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        
-        <li>Your controller at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/src/Controller/HomeControlerController.php</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        
-        <li>Your controller at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/src/Controller/HomeControlerController.php</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home_controler/index.html.twig</code></li>
-    </ul>
-</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>VK 45.01 Henschel</th>
+                <th>VK 45.01 Tiger Porsche</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="image">
+                    <a href="#smart_thumbnail_1">
+                        <img src="https://i.redd.it/q49e86jefl861.jpg" alt="Henschel prototype" class="img-normal" id="image1">
+                    </a>
+                </td>
+                <td class="image">
+                    <a href="#smart_thumbnail_2">
+                        <img src="https://2.bp.blogspot.com/-52ch2wy5QGg/V9rODkAJMGI/AAAAAAAACjk/1QdZAm26zGIENYmbi-A6lRqhMzl_bbFOgCLcB/s1600/vk4501p_1.jpg" alt="Porsche prototype" class="img-normal" id="image2">
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 {% endblock %}

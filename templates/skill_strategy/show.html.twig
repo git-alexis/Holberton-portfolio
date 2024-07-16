@@ -8,18 +8,25 @@
     {% endif %}
     <h1>SkillStrategy</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ skill_strategy.id }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-container">
+    	<table class="table">
+			<thead>
+                <tr>
+                    <th>Id</th>
+                </tr>
+            </thead>
+        	<tbody>
+            	<tr>
+                	<td>{{ skill_strategy.id }}</td>
+            	</tr>
+        	</tbody>
+    	</table>
+	</div>
+	</br>
 
-    <a href="{{ path('app_skill_strategy_index') }}">back to list</a>
-
-    <a href="{{ path('app_skill_strategy_edit', {'id': skill_strategy.id}) }}">edit</a>
+    <a href="{{ path('app_skill_strategy_edit', {'id': skill_strategy.id}) }}" class="btn btn-edit">edit</a>
 
     {{ include('skill_strategy/_delete_form.html.twig') }}
+
+    <a href="{{ path('app_skill_strategy_index') }}" class="btn">back to list</a>
 {% endblock %}
