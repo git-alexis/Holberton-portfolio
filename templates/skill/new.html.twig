@@ -10,5 +10,9 @@
 
     {{ include('skill/_form.html.twig') }}
 
-    <a href="{{ path('app_skill_index') }}" class="btn">back to list</a>
+	<div id="back">
+		<p>
+    		<a href="{{ path('app_skill_index') }}" class="btn">back to list</a>
+		</p>
+	</div>
 {% endblock %}

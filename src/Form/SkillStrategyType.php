@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class SkillStrategyType extends AbstractType
 {
@@ -18,10 +19,12 @@ class SkillStrategyType extends AbstractType
             ->add('skill_id', EntityType::class, [
                 'class' => Skill::class,
                 'choice_label' => 'id',
+				'label' => 'Skill id : ',
             ])
             ->add('strategy_id', EntityType::class, [
                 'class' => Strategy::class,
                 'choice_label' => 'id',
+				'label' => 'Strategy id : ',
             ])
         ;
     }

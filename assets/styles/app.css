@@ -134,12 +134,18 @@ article > p {
 }
 
 p, h1, td, label{
-	color: white
+	color: white;
 }
 
-form[name='register_form'], form[name='login_form'] {
+form[name='register_form'], form[name='login_form'], form[name='tank'], form[name='skill'], form[name='strategy'], form[name='tank_skill'], form[name='skill_strategy'], #back {
     margin-left: 40%;
     float: left;
+    width: 200px;
+    text-align: left;
+}
+
+form[name='delete'] {
+    margin-left: 40%;
     width: 200px;
     text-align: left;
 }
