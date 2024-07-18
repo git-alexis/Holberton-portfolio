@@ -1,45 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Strategy{% endblock %}
+{% block title %}Blitzkrieg Strategy{% endblock %}
 
 {% block body %}
     {% if user is not null %}
-        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+        <p class="user">{{ user.name ~ '.' ~ user.surname }}</p>
     {% endif %}
-    <h1 class="center">Emergency conception</h1>
+    <h1 class="center">Blitzkrieg Strategy</h1>
 
-    <p>As early as 1935, the German high command began contemplating the design of a heavy armored vehicle as part of studies that would have to address an impressive array of technical challenges.
-    The primary challenge of such a project was its propulsion, as there was no engine powerful enough at that time to move such a heavy machine - required power 600 to 700 hp / available maximum power 300 hp.
-    Moreover, the project compelled engineers to rethink the turret, chassis, suspensions, transmission, and gearbox from scratch. Maybach was tasked with designing the engine block, Krupp with the turret, Rheinmetall-Borsig with the cannon, and Henschel with the chassis. Contracts with all these companies were signed between November 1936 and January 1937.
-    In September 1939, Porsche joined the project. On his own initiative, he started contemplating a competing heavy tank project. By January 1941, the project picked up pace. Manufacturers were asked to prepare large-scale production by no later than January 1942.
-    However, the studies were far from complete, and numerous technical challenges had to be overcome (engine power, incomplete chassis and turret, etc.). But urgency arose due to the preparations for the invasion of the Soviet Union. These heavy tanks needed to be able to combat the Red Army's heavy tanks like the famous KV-1.
-    During the meeting on May 26, 1941, Hitler demanded the design of an even heavier and more powerful tank (45 tons, anti-tank gun of 75 or 88 mm penetrating 100 mm at 1500 m, armor of 100 mm front and 80 mm on the sides, maximum speed of 40 km/h with a range of 150 km).
-    Previous projects were canceled, and both Porsche and Henschel began working on the design of a new vehicle, officially becoming the Tigerprogramm. It was also during the May 26 meeting that the role of this heavy tank was defined. It was meant to have supremacy over enemy armored forces at long distances, specifically in the Russian steppes that offered vast fields of fire.
-    Real testing to distinguish between the two designs began in June 1942. The VK 45.01 Tiger Porsche prototype failed all the tests and was consequently not approved by Hitler. The VK 45.01 Henschel prototype acquired its definitive name of Tiger in March 1942.
-    In August 1942, Henschel began mass production of its heavy tank.</p>
+    <p>Blitzkrieg, which translates to "lightning war," was a military strategy developed and used by the Germans during World War II. This strategy emphasized rapid movement, surprise attacks, and the use of combined arms to create disarray and collapse enemy defenses swiftly.</p>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>VK 45.01 Henschel</th>
-                <th>VK 45.01 Tiger Porsche</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="image">
-                    <a href="#smart_thumbnail_1">
-                        <img src="https://i.redd.it/q49e86jefl861.jpg" alt="Henschel prototype" class="img-normal" id="image1">
-                    </a>
-                </td>
-                <td class="image">
-                    <a href="#smart_thumbnail_2">
-                        <img src="https://2.bp.blogspot.com/-52ch2wy5QGg/V9rODkAJMGI/AAAAAAAACjk/1QdZAm26zGIENYmbi-A6lRqhMzl_bbFOgCLcB/s1600/vk4501p_1.jpg" alt="Porsche prototype" class="img-normal" id="image2">
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <h2 class="center">Core Principles of Blitzkrieg</h2>
 
-    <a href="{{ path('app_strategy_index') }}" class="btn">back to list</a>
+    <h3>Speed and Mobility</h3>
+    <p>At the heart of Blitzkrieg was the principle of speed. Tank units, supported by mechanized infantry and close air support, would penetrate enemy lines quickly and deeply, bypassing strong points and causing chaos in the enemy's rear areas. The fast movement prevented the enemy from organizing an effective defense.</p>
+
+    <h3>Surprise and Shock</h3>
+    <p>Blitzkrieg relied heavily on achieving surprise and delivering a powerful, unexpected blow to the enemy. The suddenness of the attack would overwhelm the opponent, causing confusion and panic, which disrupted their command and control capabilities.</p>
+
+    <h3>Combined Arms Tactics</h3>
+    <p>Blitzkrieg effectively integrated tanks, infantry, artillery, and air power to create a unified and formidable fighting force. Tanks would lead the charge, breaking through enemy lines, while infantry secured the flanks and rear areas. Artillery provided fire support, and aircraft conducted bombing runs and strafing attacks to further disorganize enemy forces.</p>
+
+    <h3>Encirclement and Isolation</h3>
+    <p>Once the initial breakthrough was achieved, tank units would spread out to encircle and isolate enemy units. This tactic prevented the enemy from retreating or receiving reinforcements, effectively cutting off their ability to continue fighting effectively.</p>
+
+    <h2 class="center">Functioning of Blitzkrieg</h2>
+
+    <h3>Preparation</h3>
+    <p>Preparation for a Blitzkrieg attack involved detailed reconnaissance and planning. Commanders identified weak points in the enemy's defenses and coordinated the timing of tank assaults, infantry movements, and air support to ensure a synchronized attack.</p>
+
+    <h3>Execution</h3>
+    <p>The execution phase began with air raids and artillery bombardments to soften enemy defenses and create confusion. Following this, tanks would advance rapidly, breaking through front lines and driving deep into enemy territory. Mechanized infantry followed closely to consolidate gains and secure flanks.</p>
+
+    <h3>Exploitation</h3>
+    <p>Once a breakthrough was achieved, exploitation involved rapidly expanding the breach, encircling enemy forces, and capturing key logistical and communication centers. This phase aimed to maximize disarray and prevent the enemy from regrouping.</p>
+
+    <h2 class="center">Examples of Blitzkrieg in Action</h2>
+
+    <h3>Invasion of Poland (1939)</h3>
+    <p>The Blitzkrieg strategy was first used during the invasion of Poland in September 1939. German forces quickly overwhelmed Polish defenses through fast-moving tank assaults, coordinated air attacks, and mechanized infantry support, leading to Poland's swift defeat.</p>
+
+    <h3>Battle of France (1940)</h3>
+    <p>Blitzkrieg was famously employed in the Battle of France in 1940. German forces bypassed the heavily fortified Maginot Line by advancing through the Ardennes forest, catching French and British forces off guard. The rapid advance led to the fall of France in just six weeks.</p>
+
+    <h2 class="center">Impact and Legacy</h2>
+
+    <p>Blitzkrieg had a profound impact on World War II, demonstrating the effectiveness of fast, coordinated assaults and reshaping modern military strategy. Its success in early campaigns showcased the potential of armored warfare and highlighted the importance of mobility, speed, and combined arms operations in future conflicts.</p>
+
+    <a href="{{ path('app_tank_index') }}" class="btn">Back to List</a>
 {% endblock %}
