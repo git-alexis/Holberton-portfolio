@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Tank{% endblock %}
+
+{% block body %}
+    <h1>Compare Tanks</h1>
+    <h2>{{ tank1.name }} vs {{ tank2.name }}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Caractéristiques</th>
+                <th>Char 1</th>
+                <th>Char 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nom</td>
+                <td>{{ tank1.name }}</td>
+                <td>{{ tank2.name }}</td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td><img src="{{ tank1.image }}" alt="{{ tank1.name }}" class="tank-img"></td>
+                <td><img src="{{ tank2.image }}" alt="{{ tank2.name }}" class="tank-img"></td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>{{ tank1.type }}</td>
+                <td>{{ tank2.type }}</td>
+            </tr>
+            <tr>
+                <td>Nation</td>
+                <td>{{ tank1.nation }}</td>
+                <td>{{ tank2.nation }}</td>
+            </tr>
+            <tr>
+                <td>Poids</td>
+                <td>{{ tank1.weight }} kg</td>
+                <td>{{ tank2.weight }} kg</td>
+            </tr>
+            <tr>
+                <td>Puissance moteur</td>
+                <td>{{ tank1.engine_power }} hp</td>
+                <td>{{ tank2.engine_power }} hp</td>
+            </tr>
+            <tr>
+                <td>Vitesse maximale</td>
+                <td>{{ tank1.max_speed }} km/h</td>
+                <td>{{ tank2.max_speed }} km/h</td>
+            </tr>
+            <tr>
+                <td>Blindage avant</td>
+                <td>{{ tank1.armor_front }} mm</td>
+                <td>{{ tank2.armor_front }} mm</td>
+            </tr>
+            <tr>
+                <td>Blindage latéral</td>
+                <td>{{ tank1.armor_side }} mm</td>
+                <td>{{ tank2.armor_side }} mm</td>
+            </tr>
+            <tr>
+                <td>Blindage arrière</td>
+                <td>{{ tank1.armor_rear }} mm</td>
+                <td>{{ tank2.armor_rear }} mm</td>
+            </tr>
+            <tr>
+                <td>Puissance de feu</td>
+                <td>{{ tank1.firepower }}</td>
+                <td>{{ tank2.firepower }}</td>
+            </tr>
+            <tr>
+                <td>Portée de vue</td>
+                <td>{{ tank1.view_range }} m</td>
+                <td>{{ tank2.view_range }} m</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
