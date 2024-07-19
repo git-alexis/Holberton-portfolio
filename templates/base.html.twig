@@ -7,9 +7,10 @@
         {% block stylesheets %}
         {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+    	{% block javascripts %}
+        	{% block importmap %}{{ importmap('app') }}{% endblock %}
+			<script src="{{ asset('app.js') }}"></script>
+    	{% endblock %}
     </head>
     <body>
         <header>
@@ -19,14 +20,29 @@
                     <h1>TANK TALES</h1>
                 </div>
                 <div class="nav-section">
-                    <a href={{ path('home') }}>page home</a> |
-                    <a href={{ path('app_tank_index') }}>page tank</a> | 
-                    <a href={{ path('app_skill_index') }}>page skill</a> | 
-                    <a href={{ path('app_strategy_index') }}>page strategy</a>
+                    <a href={{ path('home') }}>Home</a> |
+                    <a href={{ path('app_register') }}>Register</a> |
+                    <a href={{ path('app_login') }}>Login</a>
+					{% if user is not null %}
+						|
+                    	<a href={{ path('app_tank_index') }}>Tank</a> |
+                    	<a href={{ path('app_skill_index') }}>Skill</a> |
+                    	<a href={{ path('app_strategy_index') }}>Strategy</a> |
+                    	<a href={{ path('app_tank_skill_index') }}>Tank-Skill</a> |
+                    	<a href={{ path('app_skill_strategy_index') }}>Skill-Strategy</a>
+					{% endif %}
                 </div>
             </div>
         </header>
 
-        {% block body %}{% endblock %}
+        <main>
+            <article>
+                {% block body %}{% endblock %}
+            </article>
+        </main>
+
+        <footer>
+			<p>Made by Alexis BILLEMONT</p>
+		</footer>
     </body>
 </html>

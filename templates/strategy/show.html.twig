@@ -1,26 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Strategy{% endblock %}
+{% block title %}Blitzkrieg Strategy{% endblock %}
 
 {% block body %}
-    <h1>Strategy</h1>
+    {% if user is not null %}
+        <p class="user">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
+    <h1 class="center">Blitzkrieg Strategy</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ strategy.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ strategy.name }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <p>Blitzkrieg, which translates to "lightning war," was a military strategy developed and used by the Germans during World War II. This strategy emphasized rapid movement, surprise attacks, and the use of combined arms to create disarray and collapse enemy defenses swiftly.</p>
 
-    <a href="{{ path('app_strategy_index') }}">back to list</a>
+    <h2 class="center">Core Principles of Blitzkrieg</h2>
 
-    <a href="{{ path('app_strategy_edit', {'id': strategy.id}) }}">edit</a>
+    <h3>Speed and Mobility</h3>
+    <p>At the heart of Blitzkrieg was the principle of speed. Tank units, supported by mechanized infantry and close air support, would penetrate enemy lines quickly and deeply, bypassing strong points and causing chaos in the enemy's rear areas. The fast movement prevented the enemy from organizing an effective defense.</p>
 
-    {{ include('strategy/_delete_form.html.twig') }}
+    <h3>Surprise and Shock</h3>
+    <p>Blitzkrieg relied heavily on achieving surprise and delivering a powerful, unexpected blow to the enemy. The suddenness of the attack would overwhelm the opponent, causing confusion and panic, which disrupted their command and control capabilities.</p>
+
+    <h3>Combined Arms Tactics</h3>
+    <p>Blitzkrieg effectively integrated tanks, infantry, artillery, and air power to create a unified and formidable fighting force. Tanks would lead the charge, breaking through enemy lines, while infantry secured the flanks and rear areas. Artillery provided fire support, and aircraft conducted bombing runs and strafing attacks to further disorganize enemy forces.</p>
+
+    <h3>Encirclement and Isolation</h3>
+    <p>Once the initial breakthrough was achieved, tank units would spread out to encircle and isolate enemy units. This tactic prevented the enemy from retreating or receiving reinforcements, effectively cutting off their ability to continue fighting effectively.</p>
+
+    <h2 class="center">Functioning of Blitzkrieg</h2>
+
+    <h3>Preparation</h3>
+    <p>Preparation for a Blitzkrieg attack involved detailed reconnaissance and planning. Commanders identified weak points in the enemy's defenses and coordinated the timing of tank assaults, infantry movements, and air support to ensure a synchronized attack.</p>
+
+    <h3>Execution</h3>
+    <p>The execution phase began with air raids and artillery bombardments to soften enemy defenses and create confusion. Following this, tanks would advance rapidly, breaking through front lines and driving deep into enemy territory. Mechanized infantry followed closely to consolidate gains and secure flanks.</p>
+
+    <h3>Exploitation</h3>
+    <p>Once a breakthrough was achieved, exploitation involved rapidly expanding the breach, encircling enemy forces, and capturing key logistical and communication centers. This phase aimed to maximize disarray and prevent the enemy from regrouping.</p>
+
+    <h2 class="center">Examples of Blitzkrieg in Action</h2>
+
+    <h3>Invasion of Poland (1939)</h3>
+    <p>The Blitzkrieg strategy was first used during the invasion of Poland in September 1939. German forces quickly overwhelmed Polish defenses through fast-moving tank assaults, coordinated air attacks, and mechanized infantry support, leading to Poland's swift defeat.</p>
+
+    <h3>Battle of France (1940)</h3>
+    <p>Blitzkrieg was famously employed in the Battle of France in 1940. German forces bypassed the heavily fortified Maginot Line by advancing through the Ardennes forest, catching French and British forces off guard. The rapid advance led to the fall of France in just six weeks.</p>
+
+    <h2 class="center">Impact and Legacy</h2>
+
+    <p>Blitzkrieg had a profound impact on World War II, demonstrating the effectiveness of fast, coordinated assaults and reshaping modern military strategy. Its success in early campaigns showcased the potential of armored warfare and highlighted the importance of mobility, speed, and combined arms operations in future conflicts.</p>
+
+    <a href="{{ path('app_tank_index') }}" class="btn">Back to List</a>
 {% endblock %}

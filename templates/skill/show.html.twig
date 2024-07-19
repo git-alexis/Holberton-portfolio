@@ -3,24 +3,37 @@
 {% block title %}Skill{% endblock %}
 
 {% block body %}
-    <h1>Skill</h1>
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
+    <h1 class="center">Tank Crews</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ skill.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ skill.name }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <p>Tank crews played a pivotal role in military operations during World War II. The evolution of tank crews was influenced by technological advancements, military strategies, and the realities of combat.</p>
 
-    <a href="{{ path('app_skill_index') }}">back to list</a>
+    <h2 class="center">Roles of Crew Members</h2>
 
-    <a href="{{ path('app_skill_edit', {'id': skill.id}) }}">edit</a>
+    <h3>Tank Commander</h3>
+    <p>The tank commander was responsible for the overall strategy of the tank on the battlefield, coordinating with other units, and making crucial tactical decisions.</p>
 
-    {{ include('skill/_delete_form.html.twig') }}
+    <h3>Radio Operator</h3>
+    <p>The radio operator ensured communication between the tank and other military units, facilitating coordinated attacks and withdrawals.</p>
+
+    <h3>Loader</h3>
+    <p>The loader was tasked with swiftly and efficiently loading ammunition into the tank's gun during combat, playing a critical role in maintaining the firing rate.</p>
+
+    <h3>Gunner</h3>
+    <p>The gunner aimed and fired the tank's main gun, ensuring precise and effective shots against enemy targets.</p>
+
+    <h3>Driver</h3>
+    <p>The driver was responsible for maneuvering the tank across diverse combat terrains while ensuring crew mobility and protection.</p>
+
+    <h2 class="center">Technological Advancements</h2>
+
+    <p>Technological advancements in tanks also impacted crew roles. Innovations such as improved communications, enhanced protection, and advanced aiming systems significantly boosted crew efficiency and survivability.</p>
+
+    <h2 class="center">Historical Impact</h2>
+
+    <p>The contribution of tank crews was profound, influencing the outcome of numerous key battles in World War II and underscoring the growing importance of armored vehicles in modern warfare.</p>
+
+    <a href="{{ path('app_skill_index') }}" class="btn">back to list</a>
 {% endblock %}

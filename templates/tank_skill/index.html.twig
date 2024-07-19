@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TankSkill index{% endblock %}
+
+{% block body %}
+    {% if user is not null %}
+        {% set current_user = user.name ~ '.' ~ user.surname %}
+        <p class="utilisateur">{{ current_user }}</p>
+    {% endif %}
+    <h1>TankSkill index</h1>
+
+    <div class="table-container">
+    	<table class="table">
+        	<thead>
+            	<tr>
+                	<th>Id</th>
+                	<th>Value</th>
+                	<th>Actions</th>
+            	</tr>
+        	</thead>
+        	<tbody>
+        	{% for tank_skill in tank_skills %}
+            	<tr>
+                	<td>{{ tank_skill.id }}</td>
+                	<td>{{ tank_skill.value }}</td>
+                	<td>
+                    	<a href="{{ path('app_tank_skill_show', {'id': tank_skill.id}) }}" class="btn btn-show">Show</a>
+                    	{% if current_user == tank_skill.getCreatedBy() or is_granted('ROLE_ADMIN') %}
+							<a href="{{ path('app_tank_skill_edit', {'id': tank_skill.id}) }}" class="btn btn-edit">Edit</a>
+						{% endif %}
+					</td>
+            	</tr>
+        	{% else %}
+            	<tr>
+                	<td colspan="3">no records found</td>
+            	</tr>
+        	{% endfor %}
+        	</tbody>
+    	</table>
+	</div>
+
+    <a href="{{ path('app_tank_skill_new') }}" class="btn btn-new">Create New</a>
+{% endblock %}

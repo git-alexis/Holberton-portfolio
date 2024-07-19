@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+	{% if user is not null %}
+    	<p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+	{% endif %}
+	<div class="form-container">
+    	<h1>Register</h1>
+    	<p><span>*</span> : mandatory field</p>
+    	{{ form_start(registerForm) }}
+        	{{ form_row(registerForm.name) }}
+        	</br>
+        	{{ form_row(registerForm.surname) }}
+        	</br>
+        	{{ form_row(registerForm.email) }}
+        	</br>
+        	{{ form_row(registerForm.roles) }}
+        	</br>
+        	{{ form_row(registerForm.plainPassword.first) }}
+        	</br>
+        	{{ form_row(registerForm.plainPassword.second) }}
+        	</br>
+    		{{ form_row(registerForm.register) }}
+    	{{ form_end(registerForm) }}
+	</div>
+{% endblock %}

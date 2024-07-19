@@ -19,14 +19,17 @@ class Strategy
     private ?string $name = null;
 
     /**
-     * @var Collection<int, Skill>
+     * @var Collection<int, SkillStrategy>
      */
-    #[ORM\ManyToMany(targetEntity: Skill::class, inversedBy: 'strategies')]
-    private Collection $skills;
+    #[ORM\OneToMany(targetEntity: SkillStrategy::class, mappedBy: 'strategy_id')]
+    private Collection $skillStrategies;
+
+    #[ORM\Column(length: 255)]
+    private ?string $created_by = null;
 
     public function __construct()
     {
-        $this->skills = new ArrayCollection();
+        $this->skillStrategies = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -47,26 +50,44 @@ class Strategy
     }
 
     /**
-     * @return Collection<int, Skill>
+     * @return Collection<int, SkillStrategy>
      */
-    public function getSkills(): Collection
+    public function getSkillStrategies(): Collection
     {
-        return $this->skills;
+        return $this->skillStrategies;
     }
 
-    public function addSkill(Skill $skill): static
+    public function addSkillStrategy(SkillStrategy $skillStrategy): static
     {
-        if (!$this->skills->contains($skill)) {
-            $this->skills->add($skill);
+        if (!$this->skillStrategies->contains($skillStrategy)) {
+            $this->skillStrategies->add($skillStrategy);
+            $skillStrategy->setStrategyId($this);
         }
 
         return $this;
     }
 
-    public function removeSkill(Skill $skill): static
+    public function removeSkillStrategy(SkillStrategy $skillStrategy): static
     {
-        $this->skills->removeElement($skill);
+        if ($this->skillStrategies->removeElement($skillStrategy)) {
+            // set the owning side to null (unless already changed)
+            if ($skillStrategy->getStrategyId() === $this) {
+                $skillStrategy->setStrategyId(null);
+            }
+        }
 
         return $this;
     }
+
+    public function getCreatedBy(): ?string
+	{
+		return $this->created_by;
+	}
+
+	public function setCreatedBy(User $user): self
+	{
+    	$this->created_by = $user->getName() . '.' . $user->getSurname();
+
+    	return $this;
+	}
 }

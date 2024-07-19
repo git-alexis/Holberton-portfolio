@@ -2,24 +2,20 @@
 
 namespace App\Form;
 
-use App\Entity\Skill;
 use App\Entity\Strategy;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class StrategyType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('skills', EntityType::class, [
-                'class' => Skill::class,
-                'choice_label' => 'id',
-                'multiple' => true,
-            ])
+			->add('name', TextType::class, [
+				'label' => 'Name :',
+			])
         ;
     }
 

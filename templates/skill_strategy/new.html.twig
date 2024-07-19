@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SkillStrategy{% endblock %}
+
+{% block body %}
+    {% if user is not null %}
+        <p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+    {% endif %}
+    <h1>Create new SkillStrategy</h1>
+
+    {{ include('skill_strategy/_form.html.twig') }}
+
+	<div id="back">
+		<p>
+    		<a href="{{ path('app_skill_strategy_index') }}" class="btn">back to list</a>
+		</p>
+	</div>
+{% endblock %}

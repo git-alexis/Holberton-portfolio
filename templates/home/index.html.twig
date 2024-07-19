@@ -1,20 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	{% if user is not null %}
+    	<p class="utilisateur">{{ user.name ~ '.' ~ user.surname }}</p>
+	{% endif %}
+	<h1 class="center">World War II Tanks</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <p>Tanks played a crucial role during World War II. Each nation involved in the conflict developed and used various tank models, each with its own characteristics and strategies of use.</p>
+    <p>Tanks are armored vehicles equipped with cannons and other weapons, designed to combine strong firepower, armored protection, and sufficient mobility to traverse different battlefields.</p>
 
-    This friendly message is coming from:
+    <h2 class="center">Most common types of Tanks</h2>
+    
+    <h3>Light Tanks</h3>
+    <p>Light tanks are fast and maneuverable, but they are lightly armored and armed. They were primarily used for reconnaissance and infantry support. Examples:</p>
     <ul>
-        <li>Your controller at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/home/abillemont/HOLBERTON_PROJECT/TankManager/templates/home/index.html.twig</code></li>
+        <li>M3 Stuart (USA)</li>
+        <li>Panzer II (Germany)</li>
+        <li>T-70 (Soviet Union)</li>
     </ul>
-</div>
+
+    <h3>Medium Tanks</h3>
+    <p>Medium tanks offer a good balance between firepower, armor, and mobility. They were used for versatile roles on the battlefield. Examples:</p>
+    <ul>
+        <li>M4 Sherman (USA)</li>
+        <li>Panzer IV (Germany)</li>
+        <li>T-34 (Soviet Union)</li>
+    </ul>
+
+    <h3>Heavy Tanks</h3>
+    <p>Heavy tanks are heavily armored and powerfully armed, but they are less mobile. They were used to break through enemy lines and engage other heavy tanks. Examples:</p>
+    <ul>
+        <li>Tiger I (Germany)</li>
+        <li>Churchill (UK)</li>
+        <li>KV-1 (Soviet Union)</li>
+    </ul>
+
+    <h2 class="center">Comparison example</h2>
+    
+    <p>Tanks from different nations had distinct strengths and weaknesses, influenced by their military doctrines and industrial capabilities.</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tank</th>
+                <th>Nation</th>
+                <th>Weight</th>
+                <th>Main Armament</th>
+                <th>Armor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>T-34</td>
+                <td>Soviet Union</td>
+                <td>26.5 tons</td>
+                <td>76.2 mm cannon</td>
+                <td>45-60 mm</td>
+            </tr>
+            <tr>
+                <td>M4 Sherman</td>
+                <td>USA</td>
+                <td>30.3 tons</td>
+                <td>75 mm cannon</td>
+                <td>51 mm</td>
+            </tr>
+            <tr>
+                <td>Panzer IV</td>
+                <td>Germany</td>
+                <td>25 tons</td>
+                <td>75 mm cannon</td>
+                <td>50-80 mm</td>
+            </tr>
+        </tbody>
+    </table>
 {% endblock %}

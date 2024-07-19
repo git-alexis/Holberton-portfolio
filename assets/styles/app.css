@@ -1,6 +1,18 @@
+body {
+    display: flex;
+	flex-direction: column;
+    background-image: url("https://www.envogue-mainz.de/out/pictures/master/product/1/army-stoff-camouflage-l748-4-natur-oliv-braun-schwarz.jpg");
+    background-size: 100%;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+	height: 100%;
+	min-height: 100vh;
+}
+
 .baniere-content {
     width: 100%;
-    height: 300px;
+    height: 200px;
     position: relative;
     text-align: center;
 }
@@ -28,8 +40,170 @@
 
 .nav-section a {
     color: rgb(0, 0, 0);
+	font-size: 18px;
 }
 
-body {
-    background-color: rgb(255, 255, 255);
+main {
+    display: flex;
+    flex: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+article {
+    flex: auto;
+    padding: 25px;
+	backdrop-filter: blur(5px);
+	background-color: rgba(22, 28, 6, 0.5);
+}
+
+.table-container {
+    margin: 0 auto;
+    display: inline-block;
+    width: 80%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+	font-size: 18px;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.image {
+	height: 160px;
+}
+
+.btn, #register_form_register {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 5px;
+	font-size: 18px;
+}
+
+.btn-show {
+    background-color: #28a745;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+}
+
+.btn-update {
+    background-color: #ffc107;
+}
+
+.btn-delete {
+    background-color: #ac0909;
+}
+
+.btn-new {
+    background-color: #007BFF;
+    display: block;
+    width: 200px;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+h1 {
+    text-decoration: none;
+}
+
+article > h1 {
+	font-size: 30px;
+}
+
+article > p {
+    text-align: justify;
+    text-indent: 36px;
+    font-size: 18px;
+}
+
+p, h1, h2, h3, li, td, label{
+	color: white;
+}
+
+form[name='register_form'], form[name='login_form'], form[name='tank'], form[name='skill'], form[name='strategy'], form[name='tank_skill'], form[name='skill_strategy'], #back {
+    margin-left: 40%;
+    float: left;
+    width: 200px;
+    text-align: left;
+}
+
+form[name='delete'] {
+    margin-left: 40%;
+    width: 200px;
+    text-align: left;
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.form-container span {
+    color: red;
+}
+
+#register_form_register {
+    display: inline-block;
+    margin: auto;
+}
+
+.form-container, .login-container {
+	font-size: 18px;
+	color: white;
+}
+
+.login-container span {
+    color: red;
+}
+
+label {
+	font-size: 18px;
+}
+
+input {
+	font-size: 18px;
+}
+
+.utilisateur {
+    padding-right: 90%;
+	font-style: italic;
+	font-size: 20px;
+
+}
+
+.img-normal {
+    width: 100px; /* Taille normale */
+    transition: transform 0.25s ease; /* Animation douce */
+}
+
+.img-zoomed {
+    transform: scale(2.5); /* Double la taille de l'image */
+}
+
+footer {
+	background-color: rgb(214, 204, 204);
+	padding: 1px;
+	margin-top: auto;
+}
+
+footer > p {
+	color: black;
+	font-size: 18px;
 }
