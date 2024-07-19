@@ -1,21 +1,28 @@
 #!/usr/bin/env php
 <?php
 
+// Import necessary classes
 use App\Kernel;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 
+// Check if the vendor directory exists, if not throw an exception
 if (!is_dir(dirname(__DIR__).'/vendor')) {
     throw new LogicException('Dependencies are missing. Try running "composer install".');
 }
 
+// Check if the autoload_runtime.php file exists, if not throw an exception
 if (!is_file(dirname(__DIR__).'/vendor/autoload_runtime.php')) {
     throw new LogicException('Symfony Runtime is missing. Try running "composer require symfony/runtime".');
 }
 
+// Include the autoload_runtime.php file
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
+// Return a closure function that takes an array of context as parameter
 return function (array $context) {
+    // Create a new Kernel instance with environment and debug parameters
     $kernel = new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']);
 
+    // Return a new Application instance initialized with the kernel
     return new Application($kernel);
 };
